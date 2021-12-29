@@ -1,60 +1,91 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+  <v-app> 
+    <v-app-bar app color="#546E7A" dark>
+      <v-app-bar-title> Grupo 5 </v-app-bar-title>
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+            <v-btn
+        v-for="(link, i) in links"
+        :key="i"
+        color="white"
         text
+        rounded
+        class="my-2"
+        :to="link.path"
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+        {{ link.label }}
       </v-btn>
     </v-app-bar>
-
+    <!-- Login -->
     <v-main>
-      <HelloWorld/>
+      <router-view></router-view>
     </v-main>
+  <v-footer
+    color="#546E7A"
+    padless
+  >
+    <v-row
+      justify="center"
+      no-gutters
+    >
+      <v-btn
+        v-for="(link, i) in links"
+        :key="i"
+        color="white"
+        text
+        rounded
+        class="my-2"
+        :to="link.path"
+      >
+        {{ link.label }}
+      </v-btn>
+      <v-col
+        class="blue-grey lighten-2 py-4 text-center white--text"
+        cols="12"
+      >
+        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+      </v-col>
+    </v-row>
+  </v-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
   name: 'App',
 
-  components: {
-    HelloWorld,
-  },
+  components: {},
 
   data: () => ({
-    //
+    links: [{
+      label: "Home",
+      path: "/",
+    },
+    {
+      label: "About",
+      path: "about",
+    },
+    { 
+      label: "Leonardo",
+      path: "leo",
+    },
+
+     { 
+      label: "Diego",
+      path: "diego",
+    },
+
+     { 
+      label: "Gabriel",
+      path: "gabriel",
+    },
+
+     { 
+      label: "Nicolas",
+      path: "nicolas",
+    },
+
+    ],
   }),
+  methods: {},
 };
 </script>
