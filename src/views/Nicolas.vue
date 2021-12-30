@@ -40,18 +40,34 @@
 				</v-list>
 			</v-navigation-drawer>
 		</v-card>
-		<div class="flex-grow-1">
-			<v-card v-for="item in results" :key="item.id">
-				<h2>{{ item.name }}</h2>
-				<img :src="item.image" />
-				<p>{{ item.description }}</p>
-			</v-card>
+		<div class="flex-grow-1 pa-10">
+			<h3>{{ $route.params.id }}</h3>
+			<v-row>
+				<v-col
+					xs="12"
+					sm="6"
+					md="4"
+					lg="3"
+					xl="2"
+					v-for="item in results"
+					:key="item.id"
+				>
+					<ZeldaItemCard :id="item.id" :name="item.name" :image="item.image">
+					</ZeldaItemCard>
+				</v-col>
+			</v-row>
 		</div>
 	</div>
 </template>
 
 <script>
+import ZeldaItemCard from "@/components/ZeldaItemCard.vue";
+
 export default {
+	name: "Nicolas",
+	components: {
+		ZeldaItemCard,
+	},
 	data: () => ({
 		endpoint: "https://botw-compendium.herokuapp.com/api/v2/",
 		results: [],
