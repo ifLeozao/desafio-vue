@@ -1,6 +1,6 @@
 <template>
 	<v-hover>
-		<v-card class="text-center" :to="'/nicolas/' + id">
+		<v-card class="text-center" :to="'/nicolas/' + category + '/' + id">
 			<v-img :src="image" height="200"></v-img>
 			<v-card-title>{{ edited_name }}</v-card-title>
 		</v-card>
@@ -16,14 +16,15 @@ export default {
 		id: Number,
 		name: String,
 		image: String,
+		category: String,
 	},
 	data: () => ({
 		edited_name: String,
 	}),
 	methods: {
 		redirect() {
-			console.log("opa");
-			this.$route.push("/nicolas/" + this.id);
+			console.log('opa');
+			this.$route.push('/nicolas/' + this.id);
 		},
 	},
 };

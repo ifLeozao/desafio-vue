@@ -34,7 +34,12 @@ const routes = [
 		component: Nicolas,
 	},
 	{
-		path: '/nicolas/:id',
+		path: '/nicolas/:category',
+		name: 'Nicolas',
+		component: Nicolas,
+	},
+	{
+		path: '/nicolas/:category/:id',
 		name: 'Nicolas',
 		component: Nicolas,
 	},
