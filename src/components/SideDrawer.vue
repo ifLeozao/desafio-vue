@@ -1,10 +1,13 @@
 <template>
-	<v-card>
-		<v-navigation-drawer permanent expand-on-hover>
+	<v-card rounded="0">
+		<v-navigation-drawer
+			color="cyan darken-4"
+			permanent
+			expand-on-hover
+			floating
+			dark
+		>
 			<v-list> </v-list>
-
-			<v-divider></v-divider>
-
 			<v-list nav dense>
 				<v-list-item link to="/nicolas/creatures">
 					<v-list-item-icon>
@@ -41,6 +44,13 @@
 	</v-card>
 </template>
 
-<script>
-export default {};
-</script>
+<style>
+.v-navigation-drawer {
+	position: fixed !important;
+	padding-top: 50px;
+	z-index: 1;
+}
+.v-list-item {
+	padding: 8px 10px !important;
+}
+</style>

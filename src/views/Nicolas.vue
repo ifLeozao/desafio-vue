@@ -1,8 +1,12 @@
 <template>
-	<div class="d-flex" style="height: 100%">
+	<div class="d-flex blue-grey darken-4" style="height: 100%">
 		<SideDrawer></SideDrawer>
-		<div class="flex-grow-1 pa-10">
-			<v-row>
+		<div class="flex-grow-1 pa-10 ml-15">
+			<ZeldaItemPage
+				v-if="'id' in this.$route.params"
+				:entry="results[0]"
+			></ZeldaItemPage>
+			<v-row v-else>
 				<v-col
 					xs="12"
 					sm="6"
@@ -28,12 +32,14 @@
 <script>
 import SideDrawer from '@/components/SideDrawer';
 import ZeldaItemCard from '@/components/ZeldaItemCard.vue';
+import ZeldaItemPage from '@/components/ZeldaItemPage.vue';
 
 export default {
 	name: 'Nicolas',
 	components: {
 		SideDrawer,
 		ZeldaItemCard,
+		ZeldaItemPage,
 	},
 	data: () => ({
 		endpoint: 'https://botw-compendium.herokuapp.com/api/v2/',
@@ -67,7 +73,10 @@ export default {
 	},
 	// eslint-disable-next-line no-unused-vars
 	beforeRouteEnter(to, from, next) {
-		next((vm) => vm.updateView());
+		next((vm) => {
+			vm.results = [];
+			vm.updateView();
+		});
 	},
 	// eslint-disable-next-line no-unused-vars
 	beforeRouteUpdate(to, from, next) {
