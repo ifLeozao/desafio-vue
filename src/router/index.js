@@ -38,7 +38,7 @@ const routes = [
     component: Diego
   },
   {
-    path: '/grabiel',
+    path: '/gabriel',
     name: 'Gabriel',
     component: Gabriel
   },
