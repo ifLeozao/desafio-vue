@@ -20,21 +20,7 @@
 				</v-card>
 			</v-col>
 			<v-col xs="12" sm="12" md="8" lg="6">
-				<v-card>
-					<v-card-title>Common Locations</v-card-title>
-					<v-card-text>
-						<ul>
-							<li
-								v-for="(location, index) in entry.common_locations"
-								:key="index"
-								class="no-dot"
-							>
-								{{ location }}
-							</li>
-						</ul>
-					</v-card-text>
-				</v-card>
-				<v-card class="mt-10" v-if="entry.drops">
+				<v-card v-if="entry.drops" class="mb-10">
 					<v-card-title>Drops</v-card-title>
 					<v-card-text>
 						<ul>
@@ -48,31 +34,54 @@
 						</ul>
 					</v-card-text>
 				</v-card>
+				<v-card>
+					<v-card-title>Common Locations</v-card-title>
+					<v-card-text>
+						<div
+							v-for="(location, index) in entry.common_locations"
+							:key="index"
+							class="no-dot"
+						>
+							<h2 class="mb-5 text-center">{{ location }}</h2>
+							<div class="location-image">
+								<v-img
+									contain
+									:src="locationImages[location]"
+									class="rounded-lg mb-10 location-img"
+									max-width="800"
+								></v-img>
+							</div>
+						</div>
+					</v-card-text>
+				</v-card>
 			</v-col>
 		</v-row>
 	</div>
 </template>
 
 <script>
+import LocationImages from '../assets/zelda_regions.json';
+
 export default {
 	data: () => ({
-		drop_list: [],
+		locationImages: LocationImages,
 	}),
 	props: {
 		entry: {},
-	},
-	methods: {
-		isEmpty() {
-			console.log('teste');
-			return this.drops.length === 0;
-		},
 	},
 };
 </script>
 
 <style>
-.no-dot {
-	list-style: none;
+.location-img {
+	transition: all 0.2s ease;
+}
+.location-img:hover {
+	-moz-transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5);
 }
 .v-card__text {
 	color: rgba(0, 0, 0, 0.8) !important;
