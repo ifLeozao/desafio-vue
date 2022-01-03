@@ -14,8 +14,7 @@ const routes = [
 		path: '/',
 		name: 'Home',
 		component: Home,
-	},
-	{
+	},			
 		path: '/ana',
 		name: 'Ana',
 		component: Ana,
@@ -27,6 +26,16 @@ const routes = [
 	},
 	{
 		path: '/nicolas',
+		name: 'Nicolas',
+		component: Nicolas,
+	},
+	{
+		path: '/nicolas/:category',
+		name: 'Nicolas',
+		component: Nicolas,
+	},
+	{
+		path: '/nicolas/:category/:id',
 		name: 'Nicolas',
 		component: Nicolas,
 	},
