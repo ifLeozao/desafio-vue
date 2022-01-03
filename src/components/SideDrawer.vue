@@ -1,7 +1,7 @@
 <template>
 	<v-card rounded="0">
 		<v-navigation-drawer
-			color="cyan darken-4"
+			color="#23361c"
 			permanent
 			expand-on-hover
 			floating

@@ -9,7 +9,7 @@
 					<v-img :src="entry.image"></v-img>
 					<v-card-text class="ps-5 white--text">
 						<div class="text-capitalize mb-8">
-							<v-chip class="mr-4" color="teal" dark>{{
+							<v-chip class="mr-4" color="#23361c" dark>{{
 								entry.category
 							}}</v-chip>
 							<v-chip v-if="entry.cooking_effect" color="green darken-1" dark>
