@@ -1,6 +1,11 @@
 <template>
 	<v-hover>
-		<v-card class="text-center" :to="'/nicolas/' + category + '/' + id">
+		<v-card
+			class="text-center"
+			color="#191f24"
+			dark
+			:to="'/nicolas/' + category + '/' + id"
+		>
 			<v-img :src="image" height="200"></v-img>
 			<v-card-title>{{ edited_name }}</v-card-title>
 		</v-card>

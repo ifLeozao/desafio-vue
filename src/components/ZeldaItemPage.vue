@@ -3,10 +3,10 @@
 		<h1 class="text-capitalize white--text mb-5">{{ entry.name }}</h1>
 		<v-row>
 			<v-col xs="12" sm="7" md="4" offset-lg="1">
-				<v-card>
+				<v-card color="#191f24" class="pb-6">
 					<v-img :src="entry.image"></v-img>
-					<v-card-text class="ps-5">
-						<div class="text-capitalize mb-4">
+					<v-card-text class="ps-5 white--text">
+						<div class="text-capitalize mb-8">
 							<v-chip class="mr-4" color="teal" dark>{{
 								entry.category
 							}}</v-chip>
@@ -20,9 +20,9 @@
 				</v-card>
 			</v-col>
 			<v-col xs="12" sm="12" md="8" lg="6">
-				<v-card v-if="entry.drops" class="mb-10">
+				<v-card v-if="entry.drops" class="mb-10 pb-5" color="#191f24" dark>
 					<v-card-title>Drops</v-card-title>
-					<v-card-text>
+					<v-card-text class="white--text">
 						<ul>
 							<li
 								v-for="(drop, index) in entry.drops"
@@ -34,7 +34,7 @@
 						</ul>
 					</v-card-text>
 				</v-card>
-				<v-card>
+				<v-card color="#191f24" dark>
 					<v-card-title>Common Locations</v-card-title>
 					<v-card-text>
 						<div
@@ -42,7 +42,7 @@
 							:key="index"
 							class="no-dot"
 						>
-							<h2 class="mb-5 text-center">{{ location }}</h2>
+							<h2 class="mb-5 text-center white--text">{{ location }}</h2>
 							<div class="location-image">
 								<v-img
 									contain
