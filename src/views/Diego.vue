@@ -122,7 +122,7 @@
                 <input type="number" id="amount-two" placeholder="0" disabled v-model="amountTwo"/>
             </div>
             <div class="container-four">
-                <h4 id="lastlyUpdated">Ultimo Update: {{ localTime }}</h4>
+                <h4 id="lastlyUpdated"><strong>Ultimo Update</strong> {{ localTime }}</h4>
             </div>
         </div>
     </div>
@@ -177,11 +177,14 @@ html{
 #app-diego{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    justify-items: center;
     align-items: center;
     align-content: center;
     width: 100%;
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 120px;
 }
 h1{
     color: #88cf4a
@@ -189,6 +192,7 @@ h1{
 
 img {
     margin-top: 20px;
+    margin-bottom: 15px;
     width: 250px;
     height: 200px;
 }
@@ -220,6 +224,7 @@ img {
     height: 70%;
     border: none;
     outline: none;
+    border-radius: 15px;
 }
 
 select{
@@ -227,7 +232,13 @@ select{
     margin: 5px;
     border: 1px solid rgba(0, 0, 0, 5);
     outline: none;
+    
 }
+select:focus{
+        color: #FFF;
+        background-color: #88cf4a;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+            }
 
 input{
     padding: 5px;
@@ -236,6 +247,11 @@ input{
     outline: none;
     font-size: 18px;
 }
+input:focus{
+        color: #FFF;
+        background-color: #88cf4a;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+            }
 
 #lastlyUpdated{
     font-weight: 500;
