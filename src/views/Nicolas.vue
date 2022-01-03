@@ -3,7 +3,7 @@
 		<SideDrawer></SideDrawer>
 		<div class="flex-grow-1 pa-10 ml-15">
 			<ZeldaItemPage
-				v-if="'id' in this.$route.params"
+				v-if="'id' in this.$route.params && results[0]"
 				:entry="results[0]"
 			></ZeldaItemPage>
 			<v-row v-else>
@@ -80,8 +80,8 @@ export default {
 	},
 	// eslint-disable-next-line no-unused-vars
 	beforeRouteUpdate(to, from, next) {
-		next();
 		this.updateView();
+		next();
 	},
 };
 </script>
