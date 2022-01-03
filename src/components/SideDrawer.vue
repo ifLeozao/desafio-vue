@@ -9,7 +9,7 @@
 		>
 			<v-list> </v-list>
 			<v-list nav dense>
-				<v-list-item link to="/nicolas/">
+				<v-list-item to="/nicolas" class="inactive">
 					<v-list-item-icon>
 						<v-icon>mdi-home</v-icon>
 					</v-list-item-icon>
@@ -58,5 +58,8 @@
 }
 .v-list-item {
 	padding: 8px 10px !important;
+}
+.inactive::before {
+	background-color: rgba(0, 0, 0, 0) !important;
 }
 </style>

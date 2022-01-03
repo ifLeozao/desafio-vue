@@ -74,9 +74,11 @@ export default {
 
 <style>
 .location-img {
-	transition: all 0.2s ease;
+	z-index: 0;
+	transition: all 0.2s ease-in-out;
 }
 .location-img:hover {
+	z-index: 100;
 	-moz-transform: scale(1.5);
 	-webkit-transform: scale(1.5);
 	-o-transform: scale(1.5);

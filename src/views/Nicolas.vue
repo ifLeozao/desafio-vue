@@ -1,12 +1,13 @@
 <template>
 	<div class="d-flex blue-grey darken-4" style="height: 100%">
 		<SideDrawer></SideDrawer>
-		<div class="flex-grow-1 pa-10 ml-15">
+		<div class="ml-14 flex-grow-1">
 			<ZeldaItemPage
+				class="pa-10"
 				v-if="'id' in this.$route.params && results[0]"
 				:entry="results[0]"
 			></ZeldaItemPage>
-			<v-row v-else>
+			<v-row v-else-if="'category' in this.$route.params" class="pa-10">
 				<v-col
 					xs="12"
 					sm="6"
@@ -25,6 +26,26 @@
 					</ZeldaItemCard>
 				</v-col>
 			</v-row>
+			<div
+				v-else
+				class="page-image pa-10 d-flex flex-column justify-space-between fill-height"
+			>
+				<div>
+					<h1 class="text-center white--text">Wiki</h1>
+					<v-img
+						width="300"
+						class="mx-auto mt-n10"
+						src="https://www.zelda.com/breath-of-the-wild/assets/img/header/zelda-botw-logo.png"
+					></v-img>
+				</div>
+				<p class="text-center white--text">
+					Feito através da API
+					<a href="https://gadhagod.github.io/Hyrule-Compendium-API/"
+						>Hyrule Compendium API</a
+					>
+					utilizando Vue.JS
+				</p>
+			</div>
 		</div>
 	</div>
 </template>
@@ -85,3 +106,18 @@ export default {
 	},
 };
 </script>
+
+<style scoped>
+.page-image {
+	background-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.1),
+			rgba(0, 0, 0, 0.8)
+		),
+		url('https://www.wallpapertip.com/wmimgs/100-1003902_516665-title-zelda-wii-u-video-game-the.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+</style>
