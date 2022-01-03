@@ -1,8 +1,10 @@
 <template>
 	<div>
-		<h1 class="text-capitalize white--text mb-5">{{ entry.name }}</h1>
+		<h1 class="text-capitalize white--text mb-5 text-center">
+			{{ entry.name }}
+		</h1>
 		<v-row>
-			<v-col xs="12" sm="7" md="4" offset-lg="1">
+			<v-col xs="12" sm="7" md="4" lg="3" offset-lg="2">
 				<v-card color="#191f24" class="pb-6">
 					<v-img :src="entry.image"></v-img>
 					<v-card-text class="ps-5 white--text">
@@ -19,7 +21,7 @@
 					</v-card-text>
 				</v-card>
 			</v-col>
-			<v-col xs="12" sm="12" md="8" lg="6">
+			<v-col xs="12" sm="12" md="8" lg="5">
 				<v-card v-if="entry.drops" class="mb-10 pb-5" color="#191f24" dark>
 					<v-card-title>Drops</v-card-title>
 					<v-card-text class="white--text">
@@ -47,8 +49,8 @@
 								<v-img
 									contain
 									:src="locationImages[location]"
-									class="rounded-lg mb-10 location-img"
-									max-width="800"
+									class="rounded-lg mb-10 location-img mx-auto"
+									max-width="600"
 								></v-img>
 							</div>
 						</div>
